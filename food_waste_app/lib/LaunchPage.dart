@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'LoginPage.dart';
 
 class LaunchPage extends StatefulWidget {
   @override
@@ -83,6 +84,19 @@ class _LaunchPage extends State<LaunchPage> {
     );
   }
 
-  void customerOption() {}
-  void restaurantOption() {}
+  void customerOption() {
+    Navigator.of(context).pushAndRemoveUntil(
+        PageRouteBuilder(
+            pageBuilder: (context, animation, animation2) => CustomerLogin(),
+            transitionDuration: Duration(seconds: 0)),
+        (route) => false);
+  }
+
+  void restaurantOption() {
+    Navigator.of(context).pushAndRemoveUntil(
+        PageRouteBuilder(
+            pageBuilder: (context, animation, animation2) => RestaurantLogin(),
+            transitionDuration: Duration(seconds: 0)),
+        (route) => false);
+  }
 }

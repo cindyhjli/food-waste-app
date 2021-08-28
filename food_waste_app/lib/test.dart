@@ -14,7 +14,7 @@ class Test extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: RestaurantLogin(),
+      home: LaunchPage(),
     );
   }
 }
