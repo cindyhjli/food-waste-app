@@ -1,49 +1,79 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class LaunchPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
+  _LaunchPage createState() => _LaunchPage();
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _LaunchPage extends State<LaunchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            name(),
+            SizedBox(height: 150),
+            customer(),
+            SizedBox(height: 10),
+            restaurant(),
           ],
         ),
       ),
     );
   }
+
+  Widget name() {
+    return Text(
+      "NAME OF \nOUR APP",
+      style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+    );
+  }
+
+  Widget customer() {
+    return TextButton(
+      style: TextButton.styleFrom(backgroundColor: Colors.blue),
+      onPressed: restaurantOption,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "CONTINUE AS",
+            style: TextStyle(color: Colors.white, fontSize: 40),
+          ),
+          Text(
+            "CUSTOMER",
+            style: TextStyle(color: Colors.white, fontSize: 60),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget restaurant() {
+    return TextButton(
+      style: TextButton.styleFrom(backgroundColor: Colors.blue),
+      onPressed: restaurantOption,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "CONTINUE AS",
+            style: TextStyle(color: Colors.white, fontSize: 40),
+          ),
+          Text(
+            "RESTAURANT",
+            style: TextStyle(color: Colors.white, fontSize: 50),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void customerOption() {}
+  void restaurantOption() {}
 }

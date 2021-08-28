@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import "RestaurantProfile.dart";
+import "LaunchPage.dart";
 
 void main() {
   runApp(Test());
@@ -14,7 +14,7 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RestaurantProfile(),
+      home: LaunchPage(),
     );
   }
 }
