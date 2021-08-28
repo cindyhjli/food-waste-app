@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
-
 class RestaurantProfile extends StatefulWidget {
-
   @override
-  _State createState() => _State();
+  _RestaurantProfileState createState() => _RestaurantProfileState();
 }
 
-class _State extends State<RestaurantProfile> {
-  final _FormKey =GlobalKey<FormState>();
-  // DateTime start, end;
-  TextEditingController controller = TextEditingController();
+class _RestaurantProfileState extends State<RestaurantProfile> {
+  final _formKey_name = GlobalKey<FormState>();
+  final _formKey_address = GlobalKey<FormState>();
+  final _formKey_telephone = GlobalKey<FormState>();
+  final _formKey_website = GlobalKey<FormState>();
+
+  TextEditingController controller_name = TextEditingController();
+  TextEditingController controller_address = TextEditingController();
+  TextEditingController controller_telephone = TextEditingController();
+  TextEditingController controller_website = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,185 +31,197 @@ class _State extends State<RestaurantProfile> {
         margin: EdgeInsets.all(22),
         child: ListView(
           children: [
-            Container(
-              alignment: Alignment.topLeft,
-              height: 8.0.h,
-              child: Text(
-                "Name",
-                style: TextStyle(fontSize: 6),
-              ),
-            ),
-            enterName(),
-            Container(
-              alignment: Alignment.topLeft,
-              height: 8.0.h,
-              child: Text(
-                "Address",
-                style: TextStyle(fontSize: 6),
-              ),
-            ),
-            enterAddress(),
-            Container(
-              alignment: Alignment.topLeft
-              height: 8.0.h,
-              child: Text(
-                "Telephone",
-                style: TextStyle(fontSize: 6),
-              ),
-            ),
-            enterTelephone(),
-            Container(
-              alignment: Alignment.topLeft
-              height: 8.0.h,
-              child: Text(
-                "Website",
-                style: TextStyle(fontSize: 6),
-              ),
-            ),
-            enterWebsite(),
-            Container(
-              alignment: Alignment.topLeft
-              height: 8.0.h,
-              child: Text(
-                "Logo",
-                style: TextStyle(fontSize: 6),
-              ),
-            ),
-            uploadLogo(),
-            Container(
-              alignment: Alignment.topLeft
-              height: 8.0.h,
-              child: Text(
-                "Photo",
-                style: TextStyle(fontSize: 6),  
-              ),
-            ),
-            uploadPhoto(),
-            Container(
-              alignment: Alignment.topLeft
-              height: 8.0.h,
-              child: Text(
-                "Menu Details",
-                style: TextStyle(fontSize: 6),
-              ),
-            ),
-            menuDetails(),
+            name(),
+            address(),
+            telephone(),
+            website(),
             submitButton(),
           ],
         ),
       ),
-    ); 
+    );
   }
 
   void onPressed() {
-    values.current_page = "restaurantLogin";
-    Navigator.of(context).pushAndRemoveUntil(
-      PageRouteBuilder(
-        pageBuilder: (context, animation, animation2) => RestaurantLogin(),
-        transitionDuration: Duration(seconds: 0)),
-      (route) => false);
+    // String current_page = "restaurantLogin";
+    // Navigator.of(context).pushAndRemoveUntil(
+    //   PageRouteBuilder(
+    //     pageBuilder: (context, animation, animation2) => RestaurantLogin(),
+    //     transitionDuration: Duration(seconds: 0)),
+    //   (route) => false);
+    print("Pressed");
+  }
+
+  Widget name() {
+    return Row(
+      children: [
+        Text(
+          "Name",
+          style: TextStyle(fontSize: 20),
+        ),
+        Expanded(child: enterName())
+      ],
+    );
+  }
+
+  Widget address() {
+    return Row(
+      children: [
+        Text(
+          "Address",
+          style: TextStyle(fontSize: 20),
+        ),
+        Expanded(child: enterAddress())
+      ],
+    );
+  }
+
+  Widget telephone() {
+    return Row(
+      children: [
+        Text(
+          "Telephone",
+          style: TextStyle(fontSize: 20),
+        ),
+        Expanded(child: enterTelephone())
+      ],
+    );
+  }
+
+  Widget website() {
+    return Row(
+      children: [
+        Text(
+          "Website",
+          style: TextStyle(fontSize: 20),
+        ),
+        Expanded(child: enterWebsite())
+      ],
+    );
   }
 
   Widget enterName() {
     return Form(
-      key: _formKey,
+      key: _formKey_name,
       child: Container(
         margin: EdgeInsets.all(25),
-        color: Colors.blue,
         child: TextFormField(
-          controller: controller,
-          maxLines: null,
+          controller: controller_name,
           validator: (value) {
-            if (value.isEmpty) {
+            if (value!.isEmpty) {
               return "Required";
-            },
+            }
           },
         ),
       ),
     );
   }
+
   Widget enterAddress() {
     return Form(
-      key: _formKey,
+      key: _formKey_address,
       child: Container(
-        margin: Edge Insets.all(25),
-        color: Colors.blue,
+        margin: EdgeInsets.all(25),
         child: TextFormField(
-          controller: controller,
-          maxLines: null,
+          controller: controller_address,
           validator: (value) {
-            if (value.isEmpty) {
+            if (value!.isEmpty) {
               return "Required";
-            },
+            }
           },
         ),
       ),
     );
   }
+
   Widget enterTelephone() {
     return Form(
-      key: _formKey,
+      key: _formKey_telephone,
       child: Container(
-        margin: Edge Insets.all(25),
-        color: Colors.blue,
+        margin: EdgeInsets.all(25),
         child: TextFormField(
-          controller: controller,
-          maxLines: null,
+          controller: controller_telephone,
           validator: (value) {
-            if (value.isEmpty) {
+            if (value!.isEmpty) {
               return "Required";
-            },
+            }
           },
         ),
       ),
     );
   }
+
   Widget enterWebsite() {
     return Form(
-      key: _formKey,
+      key: _formKey_website,
       child: Container(
-        margin: Edge Insets.all(25),
-        color: Colors.blue,
+        margin: EdgeInsets.all(25),
         child: TextFormField(
-          controller: controller,
-          maxLines: null,
+          controller: controller_website,
           validator: (value) {
-            if (value.isEmpty) {
+            if (value!.isEmpty) {
               return "Required";
-            },
+            }
           },
         ),
       ),
     );
   }
-  Widget uploadLogo()
 
-  Widget uploadPhoto()
+  Widget uploadLogo() {
+    return Text("Upload Logo");
+  }
 
-  Widget menuDetails()
+  Widget uploadPhoto() {
+    return Text("Upload Photo");
+  }
+
+  Widget menuDetails() {
+    return Text("Menu Details");
+  }
 
   Widget submitButton() {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStatwProperty.resolveWith(
-          (states) => Colors.blue)),
+          backgroundColor:
+              MaterialStateProperty.resolveWith((states) => Colors.blue)),
       onPressed: () {
-        if (_formKey.currentState.validate()) {
-          controller.clear();
-          Navigator.of(context).pushAndRemoveUntil(
-            PageRouteBuilder(
-              pageBuilder: (context.animation, animation2) => RestaurantHome(),
-              transitionDuration: Duration(seconds: 0)),
-            (route) => false);
-          }
-        },
+        if (_formKey_name.currentState!.validate() &&
+            _formKey_address.currentState!.validate() &&
+            _formKey_telephone.currentState!.validate() &&
+            _formKey_website.currentState!.validate()) {
+          controller_name.clear();
+          controller_address.clear();
+          controller_telephone.clear();
+          controller_website.clear();
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Colors.blue,
+              content: Text(
+                "Profile Updated!!",
+                style: TextStyle(fontSize: 30),
+              ),
+              duration: Duration(milliseconds: 1000),
+            ),
+          );
+          // Navigator.of(context).pushAndRemoveUntil(
+          //   PageRouteBuilder(
+          //     pageBuilder: (context.animation, animation2) => RestaurantHome(),
+          //     transitionDuration: Duration(seconds: 0)),
+          //   (route) => false);
+        }
+      },
       child: Text(
-        'Done',
-        style: TextStyle(color: Colors.white, fontSize: 3.0.h)
+        'Update',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+        ),
       ),
     );
   }
 }
+
 // import 'package:flutter/material.dart';
 
 // void main() {
