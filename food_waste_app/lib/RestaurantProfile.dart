@@ -6,7 +6,6 @@ void main() {
 }
 
 class RestaurantProfile extends StatefulWidget {
-  const ({ Key? key }) : super(key: key);
 
   @override
   _State createState() => _State();
@@ -108,7 +107,7 @@ class _State extends State<RestaurantProfile> {
     //     pageBuilder: (context, animation, animation2) => RestaurantLogin(),
     //     transitionDuration: Duration(seconds: 0)),
     //   (route) => false);
-    print("Pressed")
+    print("Pressed");
   }
 
   Widget enterName() {
@@ -141,7 +140,7 @@ class _State extends State<RestaurantProfile> {
           validator: (value) {
             if (value == null || value.isEmpty) {
               return "Required";
-            },
+            }
           },
         ),
       ),
@@ -203,13 +202,13 @@ class _State extends State<RestaurantProfile> {
         backgroundColor: MaterialStateProperty.resolveWith(
           (states) => Colors.blue)),
       onPressed: () {
-        if (_formKey.currentState.validate()) {
+        if (_formKey.currentState!.validate()) {
           controller.clear();
-          Navigator.of(context).pushAndRemoveUntil(
-            PageRouteBuilder(
-              pageBuilder: (context.animation, animation2) => RestaurantHome(),
-              transitionDuration: Duration(seconds: 0)),
-            (route) => false);
+          // Navigator.of(context).pushAndRemoveUntil(
+          //   PageRouteBuilder(
+          //     pageBuilder: (context.animation, animation2) => RestaurantHome(),
+          //     transitionDuration: Duration(seconds: 0)),
+          //   (route) => false);
           }
         },
       child: Text(
