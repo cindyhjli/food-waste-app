@@ -13,7 +13,7 @@ class RestaurantProfile extends StatefulWidget {
 }
 
 class _State extends State<RestaurantProfile> {
-  final _FormKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   // DateTime start, end;
   TextEditingController controller = TextEditingController();
   @override
@@ -102,27 +102,28 @@ class _State extends State<RestaurantProfile> {
   }
 
   void onPressed() {
-    values.current_page = "restaurantLogin";
-    Navigator.of(context).pushAndRemoveUntil(
-      PageRouteBuilder(
-        pageBuilder: (context, animation, animation2) => RestaurantLogin(),
-        transitionDuration: Duration(seconds: 0)),
-      (route) => false);
+    // String current_page = "restaurantLogin";
+    // Navigator.of(context).pushAndRemoveUntil(
+    //   PageRouteBuilder(
+    //     pageBuilder: (context, animation, animation2) => RestaurantLogin(),
+    //     transitionDuration: Duration(seconds: 0)),
+    //   (route) => false);
+    print("Pressed")
   }
 
   Widget enterName() {
     return Form(
       key: _formKey,
       child: Container(
-        margin: Edge Insets.all(25),
+        margin: EdgeInsets.all(25),
         color: Colors.blue,
         child: TextFormField(
           controller: controller,
           maxLines: null,
           validator: (value) {
-            if (value.isEmpty) {
+            if (value == null || value.isEmpty) {
               return "Required";
-            },
+            }
           },
         ),
       ),
@@ -132,13 +133,13 @@ class _State extends State<RestaurantProfile> {
     return Form(
       key: _formKey,
       child: Container(
-        margin: Edge Insets.all(25),
+        margin: EdgeInsets.all(25),
         color: Colors.blue,
         child: TextFormField(
           controller: controller,
           maxLines: null,
           validator: (value) {
-            if (value.isEmpty) {
+            if (value == null || value.isEmpty) {
               return "Required";
             },
           },
@@ -150,15 +151,15 @@ class _State extends State<RestaurantProfile> {
     return Form(
       key: _formKey,
       child: Container(
-        margin: Edge Insets.all(25),
+        margin: EdgeInsets.all(25),
         color: Colors.blue,
         child: TextFormField(
           controller: controller,
           maxLines: null,
           validator: (value) {
-            if (value.isEmpty) {
+            if (value == null || value.isEmpty) {
               return "Required";
-            },
+            }
           },
         ),
       ),
@@ -168,13 +169,13 @@ class _State extends State<RestaurantProfile> {
     return Form(
       key: _formKey,
       child: Container(
-        margin: Edge Insets.all(25),
+        margin: EdgeInsets.all(25),
         color: Colors.blue,
         child: TextFormField(
           controller: controller,
           maxLines: null,
           validator: (value) {
-            if (value.isEmpty) {
+            if (value == null || value.isEmpty) {
               return "Required";
             },
           },
@@ -182,11 +183,19 @@ class _State extends State<RestaurantProfile> {
       ),
     );
   }
-  Widget uploadLogo()
+  Widget uploadLogo() {
+    return Text(
+      "Upload Logo"
+    );
+  }
 
-  Widget uploadPhoto()
+  Widget uploadPhoto() {
+    return Text("Upload Photo");
+  }
 
-  Widget menuDetails()
+  Widget menuDetails() {
+    return Text("Menu Details");
+  }
 
   Widget submitButton() {
     return ElevatedButton(
