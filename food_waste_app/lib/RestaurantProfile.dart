@@ -4,6 +4,10 @@ import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
 
+void main() {
+  runApp(RestaurantProfile());
+}
+
 class RestaurantProfile extends StatefulWidget {
   const ({ Key? key }) : super(key: key);
 
@@ -33,6 +37,14 @@ class _State extends State<RestaurantProfile> {
             Container(
               alignment: Alignment.topLeft,
               height: 8.0.h,
+              child: Text(
+                "Name"
+                style: TextStyle(fontSize: 6),
+              )
+            )
+            enterName(),
+            Container(
+              alignment: Alignment.Left
 
             )
           ]
