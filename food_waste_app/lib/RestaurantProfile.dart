@@ -14,7 +14,7 @@ class RestaurantProfile extends StatefulWidget {
 
 class _State extends State<RestaurantProfile> {
   final _FormKey =GlobalKey<FormState>();
-  DateTime start, end;
+  // DateTime start, end;
   TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -37,8 +37,8 @@ class _State extends State<RestaurantProfile> {
               child: Text(
                 "Name"
                 style: TextStyle(fontSize: 6),
-              )
-            )
+              ),
+            ),
             enterName(),
             Container(
               alignment: Alignment.topLeft
@@ -46,8 +46,8 @@ class _State extends State<RestaurantProfile> {
               child: Text(
                 "Address"
                 style: TextStyle(fontSize: 6),
-              )
-            )
+              ),
+            ),
             enterAddress(),
             Container(
               alignment: Alignment.topLeft
@@ -55,8 +55,8 @@ class _State extends State<RestaurantProfile> {
               child: Text(
                 "Telephone"
                 style: TextStyle(fontSize: 6),
-              )
-            )
+              ),
+            ),
             enterTelephone(),
             Container(
               alignment: Alignment.topLeft
@@ -64,8 +64,8 @@ class _State extends State<RestaurantProfile> {
               child: Text(
                 "Website"
                 style: TextStyle(fontSize: 6),
-              )
-            )
+              ),
+            ),
             enterWebsite(),
             Container(
               alignment: Alignment.topLeft
@@ -73,8 +73,8 @@ class _State extends State<RestaurantProfile> {
               child: Text(
                 "Logo"
                 style: TextStyle(fontSize: 6),
-              )
-            )
+              ),
+            ),
             uploadLogo(),
             Container(
               alignment: Alignment.topLeft
@@ -82,8 +82,8 @@ class _State extends State<RestaurantProfile> {
               child: Text(
                 "Photo"
                 style: TextStyle(fontSize: 6),  
-              )
-            )
+              ),
+            ),
             uploadPhoto(),
             Container(
               alignment: Alignment.topLeft
@@ -91,8 +91,8 @@ class _State extends State<RestaurantProfile> {
               child: Text(
                 "Menu Details"
                 style: TextStyle(fontSize: 6),
-              )
-            )
+              ),
+            ),
             menuDetails(),
             submitButton(),
           ],
