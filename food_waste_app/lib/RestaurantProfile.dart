@@ -13,7 +13,7 @@ class RestaurantProfile extends StatefulWidget {
 }
 
 class _State extends State<RestaurantProfile> {
-  final _FormKey =GlobalKey<FormState>();
+  final _FormKey = GlobalKey<FormState>();
   // DateTime start, end;
   TextEditingController controller = TextEditingController();
   @override
@@ -35,61 +35,61 @@ class _State extends State<RestaurantProfile> {
               alignment: Alignment.topLeft,
               height: 8.0.h,
               child: Text(
-                "Name"
+                "Name",
                 style: TextStyle(fontSize: 6),
               ),
             ),
             enterName(),
             Container(
-              alignment: Alignment.topLeft
+              alignment: Alignment.topLeft,
               height: 8.0.h,
               child: Text(
-                "Address"
+                "Address",  
                 style: TextStyle(fontSize: 6),
               ),
             ),
             enterAddress(),
             Container(
-              alignment: Alignment.topLeft
+              alignment: Alignment.topLeft,
               height: 8.0.h,
               child: Text(
-                "Telephone"
+                "Telephone",
                 style: TextStyle(fontSize: 6),
               ),
             ),
             enterTelephone(),
             Container(
-              alignment: Alignment.topLeft
+              alignment: Alignment.topLeft,
               height: 8.0.h,
               child: Text(
-                "Website"
+                "Website",
                 style: TextStyle(fontSize: 6),
               ),
             ),
             enterWebsite(),
             Container(
-              alignment: Alignment.topLeft
+              alignment: Alignment.topLeft,
               height: 8.0.h,
               child: Text(
-                "Logo"
+                "Logo",
                 style: TextStyle(fontSize: 6),
               ),
             ),
             uploadLogo(),
             Container(
-              alignment: Alignment.topLeft
+              alignment: Alignment.topLeft,
               height: 8.0.h,
               child: Text(
-                "Photo"
+                "Photo",
                 style: TextStyle(fontSize: 6),  
               ),
             ),
             uploadPhoto(),
             Container(
-              alignment: Alignment.topLeft
+              alignment: Alignment.topLeft,
               height: 8.0.h,
               child: Text(
-                "Menu Details"
+                "Menu Details",
                 style: TextStyle(fontSize: 6),
               ),
             ),
@@ -191,7 +191,7 @@ class _State extends State<RestaurantProfile> {
   Widget submitButton() {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStatwProperty.resolveWith(
+        backgroundColor: MaterialStateProperty.resolveWith(
           (states) => Colors.blue)),
       onPressed: () {
         if (_formKey.currentState.validate()) {
