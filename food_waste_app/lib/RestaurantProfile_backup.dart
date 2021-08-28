@@ -6,16 +6,8 @@ class RestaurantProfile extends StatefulWidget {
 }
 
 class _RestaurantProfileState extends State<RestaurantProfile> {
-  final _formKey_name = GlobalKey<FormState>();
-  final _formKey_address = GlobalKey<FormState>();
-  final _formKey_telephone = GlobalKey<FormState>();
-  final _formKey_website = GlobalKey<FormState>();
-
-  TextEditingController controller_name = TextEditingController();
-  TextEditingController controller_address = TextEditingController();
-  TextEditingController controller_telephone = TextEditingController();
-  TextEditingController controller_website = TextEditingController();
-
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,10 +23,69 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
         margin: EdgeInsets.all(22),
         child: ListView(
           children: [
-            name(),
-            address(),
-            telephone(),
-            website(),
+            Container(
+              alignment: Alignment.topLeft,
+              height: 20,
+              child: Text(
+                "Name",
+                style: TextStyle(fontSize: 6),
+              ),
+            ),
+            enterName(),
+            Container(
+              alignment: Alignment.topLeft,
+              height: 20,
+              child: Text(
+                "Address",
+                style: TextStyle(fontSize: 6),
+              ),
+            ),
+            enterAddress(),
+            Container(
+              alignment: Alignment.topLeft,
+              height: 20,
+              child: Text(
+                "Telephone",
+                style: TextStyle(fontSize: 6),
+              ),
+            ),
+            enterTelephone(),
+            Container(
+              alignment: Alignment.topLeft,
+              height: 20,
+              child: Text(
+                "Website",
+                style: TextStyle(fontSize: 6),
+              ),
+            ),
+            enterWebsite(),
+            Container(
+              alignment: Alignment.topLeft,
+              height: 20,
+              child: Text(
+                "Logo",
+                style: TextStyle(fontSize: 6),
+              ),
+            ),
+            uploadLogo(),
+            Container(
+              alignment: Alignment.topLeft,
+              height: 20,
+              child: Text(
+                "Photo",
+                style: TextStyle(fontSize: 6),
+              ),
+            ),
+            uploadPhoto(),
+            Container(
+              alignment: Alignment.topLeft,
+              height: 20,
+              child: Text(
+                "Menu Details",
+                style: TextStyle(fontSize: 6),
+              ),
+            ),
+            menuDetails(),
             submitButton(),
           ],
         ),
@@ -52,61 +103,15 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     print("Pressed");
   }
 
-  Widget name() {
-    return Row(
-      children: [
-        Text(
-          "Name",
-          style: TextStyle(fontSize: 20),
-        ),
-        Expanded(child: enterName())
-      ],
-    );
-  }
-
-  Widget address() {
-    return Row(
-      children: [
-        Text(
-          "Address",
-          style: TextStyle(fontSize: 20),
-        ),
-        Expanded(child: enterAddress())
-      ],
-    );
-  }
-
-  Widget telephone() {
-    return Row(
-      children: [
-        Text(
-          "Telephone",
-          style: TextStyle(fontSize: 20),
-        ),
-        Expanded(child: enterTelephone())
-      ],
-    );
-  }
-
-  Widget website() {
-    return Row(
-      children: [
-        Text(
-          "Website",
-          style: TextStyle(fontSize: 20),
-        ),
-        Expanded(child: enterWebsite())
-      ],
-    );
-  }
-
   Widget enterName() {
     return Form(
-      key: _formKey_name,
+      key: _formKey,
       child: Container(
         margin: EdgeInsets.all(25),
+        color: Colors.blue,
         child: TextFormField(
-          controller: controller_name,
+          controller: controller,
+          maxLines: null,
           validator: (value) {
             if (value!.isEmpty) {
               return "Required";
@@ -119,11 +124,13 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
 
   Widget enterAddress() {
     return Form(
-      key: _formKey_address,
+      key: _formKey,
       child: Container(
         margin: EdgeInsets.all(25),
+        color: Colors.blue,
         child: TextFormField(
-          controller: controller_address,
+          controller: controller,
+          maxLines: null,
           validator: (value) {
             if (value!.isEmpty) {
               return "Required";
@@ -136,11 +143,13 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
 
   Widget enterTelephone() {
     return Form(
-      key: _formKey_telephone,
+      key: _formKey,
       child: Container(
         margin: EdgeInsets.all(25),
+        color: Colors.blue,
         child: TextFormField(
-          controller: controller_telephone,
+          controller: controller,
+          maxLines: null,
           validator: (value) {
             if (value!.isEmpty) {
               return "Required";
@@ -153,11 +162,13 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
 
   Widget enterWebsite() {
     return Form(
-      key: _formKey_website,
+      key: _formKey,
       child: Container(
         margin: EdgeInsets.all(25),
+        color: Colors.blue,
         child: TextFormField(
-          controller: controller_website,
+          controller: controller,
+          maxLines: null,
           validator: (value) {
             if (value!.isEmpty) {
               return "Required";
@@ -186,24 +197,8 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
           backgroundColor:
               MaterialStateProperty.resolveWith((states) => Colors.blue)),
       onPressed: () {
-        if (_formKey_name.currentState!.validate() &&
-            _formKey_address.currentState!.validate() &&
-            _formKey_telephone.currentState!.validate() &&
-            _formKey_website.currentState!.validate()) {
-          controller_name.clear();
-          controller_address.clear();
-          controller_telephone.clear();
-          controller_website.clear();
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              backgroundColor: Colors.blue,
-              content: Text(
-                "Profile Updated!!",
-                style: TextStyle(fontSize: 30),
-              ),
-              duration: Duration(milliseconds: 1000),
-            ),
-          );
+        if (_formKey.currentState!.validate()) {
+          controller.clear();
           // Navigator.of(context).pushAndRemoveUntil(
           //   PageRouteBuilder(
           //     pageBuilder: (context.animation, animation2) => RestaurantHome(),
