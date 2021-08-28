@@ -193,13 +193,20 @@ class _State extends State<RestaurantProfile> {
       style: ButtonStyle(
         backgroundColor: MaterialStatwProperty.resolveWith(
           (states) => Colors.blue)),
-        onPressed: () {
-          if (_formKey.currentState.validate()) {
-            controller.clear();
+      onPressed: () {
+        if (_formKey.currentState.validate()) {
+          controller.clear();
+          Navigator.of(context).pushAndRemoveUntil(
+            PageRouteBuilder(
+              pageBuilder: (context.animation, animation2) => RestaurantHome(),
+              transitionDuration: Duration(seconds: 0)),
+            (route) => false);
           }
-        }
-        )
-      )
-    )
+        },
+      child: Text(
+        'Done',
+        style: TextStyle(color: Colors.white, fontSize: 3.0.h)
+      ),
+    );
   }
 }
