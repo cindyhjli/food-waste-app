@@ -15,7 +15,7 @@ class _LaunchPage extends State<LaunchPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             name(),
-            SizedBox(height: 150),
+            SizedBox(height: 120),
             customer(),
             SizedBox(height: 10),
             restaurant(),
@@ -33,43 +33,52 @@ class _LaunchPage extends State<LaunchPage> {
   }
 
   Widget customer() {
-    return TextButton(
-      style: TextButton.styleFrom(backgroundColor: Colors.blue),
-      onPressed: restaurantOption,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            "CONTINUE AS",
-            style: TextStyle(color: Colors.white, fontSize: 40),
-          ),
-          Text(
-            "CUSTOMER",
-            style: TextStyle(color: Colors.white, fontSize: 60),
-          ),
-        ],
+    return Container(
+      width: 380,
+      height: 150,
+      color: Colors.blue,
+      child: TextButton(
+        style: TextButton.styleFrom(backgroundColor: Colors.blue),
+        onPressed: restaurantOption,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "CONTINUE AS",
+              style: TextStyle(color: Colors.white, fontSize: 40),
+            ),
+            Text(
+              "CUSTOMER",
+              style: TextStyle(color: Colors.white, fontSize: 60),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   Widget restaurant() {
-    return TextButton(
-      style: TextButton.styleFrom(backgroundColor: Colors.blue),
-      onPressed: restaurantOption,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            "CONTINUE AS",
-            style: TextStyle(color: Colors.white, fontSize: 40),
-          ),
-          Text(
-            "RESTAURANT",
-            style: TextStyle(color: Colors.white, fontSize: 50),
-          ),
-        ],
+    return Container(
+      width: 380,
+      height: 150,
+      child: TextButton(
+        style: TextButton.styleFrom(backgroundColor: Colors.blue),
+        onPressed: restaurantOption,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "CONTINUE AS",
+              style: TextStyle(color: Colors.white, fontSize: 40),
+            ),
+            Text(
+              "RESTAURANT",
+              style: TextStyle(color: Colors.white, fontSize: 50),
+            ),
+          ],
+        ),
       ),
     );
   }
