@@ -124,6 +124,18 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     );
   }
 
+  Widget menuDetails() {
+    return Row(
+      children: [
+        Text(
+          "Menu Details",
+          style: TextStyle(fontSize: 20),
+        ),
+        Expanded(child: enterMenuDetails())
+      ],
+    );
+  }
+
   Widget enterName() {
     return Form(
       key: _formKey_name,
@@ -199,10 +211,43 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
   Widget uploadPhoto() {
     return Text("Upload Photo");
   }
+}
 
-  Widget menuDetails() {
-    return Text("Menu Details");
+class enterMenuDetails extends StatefulWidget {
+   
+   @override
+   State<enterMenuDetails> createState() => _enterMenuDetailsState();
+}
+
+class _enterMenuDetailsState extends State<enterMenuDetails> {
+  bool isChecked = false;
+
+  @override
+  Widget build(BuildContext context) {
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Colors.blue;
+      }
+      return Colors.black;
+    }
+    return Checkbox(
+      checkColor: Colors.white,
+      fillColor: MaterialStateProperty.resolveWith(getColor),
+      value: isChecked,
+      onChanged: (bool? value) {
+        setState(() {
+          isChecked = value!;
+        });
+      },
+    );
   }
+}
+
 
   Widget submitButton() {
     return ElevatedButton(
