@@ -29,7 +29,7 @@ class _LaunchPage extends State<LaunchPage> {
 
   Widget name() {
     return Text(
-      "Cheap Eats",
+      "CHEAP EATS",
       style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
     );
   }
