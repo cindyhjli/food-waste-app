@@ -87,7 +87,7 @@ class _CustomerHomepage extends State<CustomerHomepage> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(5)),
             image: DecorationImage(
-              image: AssetImage("lib/assets/tile1.png"),
+              image: AssetImage("lib/assets/tiles (1).png"),
             ),
           ),
         ),
@@ -98,7 +98,7 @@ class _CustomerHomepage extends State<CustomerHomepage> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(5)),
             image: DecorationImage(
-              image: AssetImage("lib/assets/tile1.png"),
+              image: AssetImage("lib/assets/tiles (2).png"),
             ),
           ),
         ),
@@ -125,7 +125,7 @@ class _CustomerHomepage extends State<CustomerHomepage> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(5)),
             image: DecorationImage(
-              image: AssetImage("lib/assets/tile1.png"),
+              image: AssetImage("lib/assets/tiles (5).png"),
             ),
           ),
         ),
@@ -136,7 +136,7 @@ class _CustomerHomepage extends State<CustomerHomepage> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(5)),
             image: DecorationImage(
-              image: AssetImage("lib/assets/tile1.png"),
+              image: AssetImage("lib/assets/tiles (4).png"),
             ),
           ),
         ),
@@ -150,7 +150,7 @@ class _CustomerHomepage extends State<CustomerHomepage> {
 
   Widget title() {
     return Text(
-      "  NAME OF OUR APP",
+      " CHEAP EATS ",
       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     );
   }
@@ -165,7 +165,7 @@ class _CustomerHomepage extends State<CustomerHomepage> {
   Widget mysteryMealsStarting() {
     return Text(
       "  Mystery Meals Starting Soon",
-      style: TextStyle(fontSize: 30),
+      style: TextStyle(fontSize: 27),
     );
   }
 
