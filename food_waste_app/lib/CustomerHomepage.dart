@@ -12,7 +12,7 @@ class _CustomerHomepage extends State<CustomerHomepage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 30),
+          SizedBox(height: 45),
           title(),
           SizedBox(height: 10),
           header(),
