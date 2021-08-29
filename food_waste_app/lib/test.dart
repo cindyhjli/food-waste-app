@@ -4,6 +4,7 @@ import "LaunchPage.dart";
 import 'RestaurantProfile.dart';
 import 'LoginPage.dart';
 import 'SearchPage.dart';
+import 'CustomerHomepage.dart';
 
 void main() {
   runApp(Test());
@@ -15,7 +16,7 @@ class Test extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: LaunchPage(),
+      home: CustomerHomepage(),
     );
   }
 }
