@@ -120,21 +120,22 @@ class _Search extends State<Search> {
       height: 400,
       child: ListView(
         children: [
+          item(),
           item0(),
           item1(),
           item2(),
           item3(),
           item4(),
           item5(),
-          item(),
-          item7(),
           item6(),
+          item7(),
+
         ],
       ),
     );
   }
 
-  Widget item() {
+  Widget item0() {
     return ListTile(
       leading: Container(
         width: 50,
@@ -150,11 +151,11 @@ class _Search extends State<Search> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Healthy Habits (until 6:45)",
+            "Healthy Habits (until 5:30)",
             style: TextStyle(fontSize: 20),
           ),
           Text(
-            "8 Queen's Street, Toronto, ON",
+            "100 Main Street, Toronto, ON",
             style: TextStyle(fontSize: 15),
           ),
           Text(
@@ -167,7 +168,7 @@ class _Search extends State<Search> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "10+\n\$10",
+            "10+\n\$5",
             style: TextStyle(fontSize: 20),
           ),
         ],
@@ -175,7 +176,7 @@ class _Search extends State<Search> {
     );
   }
 
-  Widget item6() {
+  Widget item7() {
     return ListTile(
       leading: Container(
         width: 50,
@@ -216,7 +217,7 @@ class _Search extends State<Search> {
     );
   }
 
-  Widget item7() {
+  Widget item6() {
     return ListTile(
       leading: Container(
         width: 50,
@@ -462,7 +463,7 @@ class _Search extends State<Search> {
     );
   }
 
-  Widget item0() {
+  Widget item() {
     return ListTile(
       leading: Container(
         width: 50,
