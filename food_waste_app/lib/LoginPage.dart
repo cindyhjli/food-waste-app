@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_waste_app/CustomerHomepage.dart';
 import 'package:food_waste_app/RestaurantProfile.dart';
 
 class CustomerLogin extends StatefulWidget {
@@ -18,7 +19,7 @@ class _CustomerLogin extends State<CustomerLogin> {
       resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          SizedBox(height: 50),
+          SizedBox(height: 75),
           title(),
           SizedBox(height: 30),
           email(),
@@ -76,8 +77,8 @@ class _CustomerLogin extends State<CustomerLogin> {
       children: [
         SizedBox(width: 10),
         Text(
-          "Email",
-          style: TextStyle(fontSize: 30),
+          "   Email:",
+          style: TextStyle(fontSize: 25),
         ),
         Expanded(child: enterEmail())
       ],
@@ -89,8 +90,8 @@ class _CustomerLogin extends State<CustomerLogin> {
       children: [
         SizedBox(width: 10),
         Text(
-          "Password",
-          style: TextStyle(fontSize: 30),
+          "   Password:",
+          style: TextStyle(fontSize: 25),
         ),
         Expanded(child: enterPassword())
       ],
@@ -115,16 +116,11 @@ class _CustomerLogin extends State<CustomerLogin> {
   void onPressed() {
     controller_email.clear();
     controller_password.clear();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        backgroundColor: Colors.blue,
-        content: Text(
-          "Logged in!",
-          style: TextStyle(fontSize: 30),
-        ),
-        duration: Duration(milliseconds: 1000),
-      ),
-    );
+    Navigator.of(context).pushAndRemoveUntil(
+      PageRouteBuilder(
+        pageBuilder: (context, animation, animation2) => CustomerHomepage(),
+        transitionDuration: Duration(seconds: 0)),
+      (route) => false);
   }
 
   Widget newAccount() {
@@ -181,7 +177,7 @@ class _RestaurantLogin extends State<RestaurantLogin> {
       resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          SizedBox(height: 50),
+          SizedBox(height: 75),
           title(),
           SizedBox(height: 30),
           email(),
@@ -237,8 +233,8 @@ class _RestaurantLogin extends State<RestaurantLogin> {
       children: [
         SizedBox(width: 10),
         Text(
-          "Email",
-          style: TextStyle(fontSize: 30),
+          "   Email:",
+          style: TextStyle(fontSize: 25),
         ),
         Expanded(child: enterEmail())
       ],
@@ -250,8 +246,8 @@ class _RestaurantLogin extends State<RestaurantLogin> {
       children: [
         SizedBox(width: 10),
         Text(
-          "Password",
-          style: TextStyle(fontSize: 30),
+          "   Password:",
+          style: TextStyle(fontSize: 25),
         ),
         Expanded(child: enterPassword())
       ],
@@ -276,16 +272,6 @@ class _RestaurantLogin extends State<RestaurantLogin> {
   void onPressed() {
     controller_email.clear();
     controller_password.clear();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        backgroundColor: Colors.blue,
-        content: Text(
-          "Logged in!",
-          style: TextStyle(fontSize: 30),
-        ),
-        duration: Duration(milliseconds: 1000),
-      ),
-    );
         Navigator.of(context).pushAndRemoveUntil(
         PageRouteBuilder(
             pageBuilder: (context, animation, animation2) => RestaurantProfile(),
