@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "SearchPage.dart";
 
 class CustomerHomepage extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _CustomerHomepage extends State<CustomerHomepage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 30),
+          SizedBox(height: 45),
           title(),
           SizedBox(height: 10),
           header(),
@@ -35,12 +36,14 @@ class _CustomerHomepage extends State<CustomerHomepage> {
               child: Icon(
                 Icons.home,
                 size: 50,
+                color: Colors.blue,
               ),
             ),
             Expanded(
-              child: Icon(
-                Icons.search,
-                size: 50,
+              child: IconButton(
+                icon: Icon(Icons.search, size: 50,),
+                onPressed: onPressed,
+                padding: EdgeInsets.only(bottom: 7)
               ),
             ),
             Expanded(
@@ -59,6 +62,14 @@ class _CustomerHomepage extends State<CustomerHomepage> {
         ),
       ),
     );
+  }
+
+  void onPressed() {
+    Navigator.of(context).pushAndRemoveUntil(
+        PageRouteBuilder(
+            pageBuilder: (context, animation, animation2) => Search(),
+            transitionDuration: Duration(seconds: 0)),
+        (route) => false);
   }
 
   Widget nearby_tiles() {

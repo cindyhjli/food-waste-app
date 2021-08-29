@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'LoginPage.dart';
 
 class RestaurantProfile extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
   TextEditingController controller_address = TextEditingController();
   TextEditingController controller_telephone = TextEditingController();
   TextEditingController controller_website = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +42,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
             photo(),
             uploadPhoto(),
             menuDetails(),
+            enterMenuDetails(),
             submitButton(),
           ],
         ),
@@ -48,20 +51,18 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
   }
 
   void onPressed() {
-    // String current_page = "restaurantLogin";
-    // Navigator.of(context).pushAndRemoveUntil(
-    //   PageRouteBuilder(
-    //     pageBuilder: (context, animation, animation2) => RestaurantLogin(),
-    //     transitionDuration: Duration(seconds: 0)),
-    //   (route) => false);
-    print("Pressed");
+    Navigator.of(context).pushAndRemoveUntil(
+        PageRouteBuilder(
+            pageBuilder: (context, animation, animation2) => RestaurantLogin(),
+            transitionDuration: Duration(seconds: 0)),
+        (route) => false);
   }
 
   Widget name() {
     return Row(
       children: [
         Text(
-          "Name",
+          "Name:",
           style: TextStyle(fontSize: 20),
         ),
         Expanded(child: enterName())
@@ -73,7 +74,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     return Row(
       children: [
         Text(
-          "Address",
+          "Address:",
           style: TextStyle(fontSize: 20),
         ),
         Expanded(child: enterAddress())
@@ -85,7 +86,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     return Row(
       children: [
         Text(
-          "Telephone",
+          "Telephone:",
           style: TextStyle(fontSize: 20),
         ),
         Expanded(child: enterTelephone())
@@ -97,7 +98,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     return Row(
       children: [
         Text(
-          "Website",
+          "Website:",
           style: TextStyle(fontSize: 20),
         ),
         Expanded(child: enterWebsite())
@@ -109,7 +110,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     return Row(
       children: [
         Text(
-          "Logo",
+          "Logo:",
           style: TextStyle(fontSize: 20),
         ),
       ],
@@ -121,7 +122,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
       children: [
         Text(
           "Upload Logo",
-          style: TextStyle(fontSize: 15),
+          style: TextStyle(fontSize: 15, color: Colors.blue),
         ),
       ],
     );
@@ -131,7 +132,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     return Row(
       children: [
         Text(
-          "Photo",
+          "\nPhoto:",
           style: TextStyle(fontSize: 20),
         ),
       ],
@@ -143,7 +144,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
       children: [
         Text(
           "Upload Photo",
-          style: TextStyle(fontSize: 15),
+          style: TextStyle(fontSize: 15, color: Colors.blue),
         ),
       ],
     );
@@ -153,10 +154,9 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     return Row(
       children: [
         Text(
-          "Menu Details",
+          "\nMenu Details:",
           style: TextStyle(fontSize: 20),
         ),
-        Expanded(child: enterMenuDetails())
       ],
     );
   }
@@ -248,7 +248,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
             SnackBar(
               backgroundColor: Colors.blue,
               content: Text(
-                "Profile Updated!!",
+                "Profile Completed!!",
                 style: TextStyle(fontSize: 30),
               ),
               duration: Duration(milliseconds: 1000),
@@ -256,13 +256,13 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
           );
           // Navigator.of(context).pushAndRemoveUntil(
           //   PageRouteBuilder(
-          //     pageBuilder: (context.animation, animation2) => RestaurantHome(),
+          //     pageBuilder: (context, animation, animation2) => RestaurantHomepage(),
           //     transitionDuration: Duration(seconds: 0)),
           //   (route) => false);
         }
       },
       child: Text(
-        'Update',
+        'Done',
         style: TextStyle(
           color: Colors.white,
           fontSize: 20,
@@ -270,6 +270,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
       ),
     );
   }
+
 }
 
 class enterMenuDetails extends StatefulWidget {
@@ -279,25 +280,165 @@ class enterMenuDetails extends StatefulWidget {
 }
 
 class _enterMenuDetailsState extends State<enterMenuDetails> {
-  bool isChecked = false;
+  bool vegetarianVal = false;
+  bool veganVal = false;
+  bool dairyVal = false;
+  bool glutenVal = false;
+  bool milkVal = false;
+  bool eggVal = false;
+  bool soyVal = false;
+  bool wheatVal = false;
+  bool peanutsVal = false;
+  bool treenutsVal = false;
+  bool fishVal = false;
+  bool otherVal = false;
 
   @override
   Widget build(BuildContext context) {
     Color getColor(Set<MaterialState> states) {
       return Colors.blue;
     }
-    return Checkbox(
-      checkColor: Colors.white,
-      fillColor: MaterialStateProperty.resolveWith(getColor),
-      value: isChecked,
-      onChanged: (bool? value) {
-        setState(() {
-          isChecked = value!;
-        });
-      },
+    return Container(
+      width: 500,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("Vegetarian"),
+            value: vegetarianVal,
+            
+            onChanged: (bool? value) {
+              setState(() {
+                vegetarianVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("Vegan"),
+            value: veganVal,
+            onChanged: (bool? value) {
+              setState(() {
+                veganVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("Dairy-free"),
+            value: dairyVal,
+            onChanged: (bool? value) {
+              setState(() {
+                dairyVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("Gluten-free"),
+            value: glutenVal,
+            onChanged: (bool? value) {
+              setState(() {
+                glutenVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("May contain milk"),
+            value: milkVal,
+            onChanged: (bool? value) {
+              setState(() {
+                milkVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("May contain eggs"),
+            value: eggVal,
+            onChanged: (bool? value) {
+              setState(() {
+                eggVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("May contain soy"),
+            value: soyVal,
+            onChanged: (bool? value) {
+              setState(() {
+                soyVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("May contain wheat"),
+            value: wheatVal,
+            onChanged: (bool? value) {
+              setState(() {
+                wheatVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("May contain peanuts"),
+            value: peanutsVal,
+            onChanged: (bool? value) {
+              setState(() {
+                peanutsVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("May contain tree nuts"),
+            value: treenutsVal,
+            onChanged: (bool? value) {
+              setState(() {
+                treenutsVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("May contain fish"),
+            value: fishVal,
+            onChanged: (bool? value) {
+              setState(() {
+                fishVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          ),
+          CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            title: const Text("Other:__________"),
+            value: otherVal,
+            onChanged: (bool? value) {
+              setState(() {
+                otherVal = value!;
+              });
+            },
+            contentPadding: EdgeInsets.all(0.0),
+          )
+        ]
+      )
     );
   }
 }
-
-
-

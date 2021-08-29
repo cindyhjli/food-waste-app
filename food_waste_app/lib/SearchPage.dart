@@ -67,12 +67,12 @@ class _Search extends State<Search> {
       children: [
         SizedBox(width: 10),
         Text(
-          "Filter",
+          "  Filter",
           style: TextStyle(fontSize: 15, color: Colors.blue),
         ),
         SizedBox(width: 170),
         Text(
-          "Sort by: ",
+          " Sort by: ",
           style: TextStyle(fontSize: 15),
         ),
         Text(
