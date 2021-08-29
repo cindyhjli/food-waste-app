@@ -79,11 +79,6 @@ class _Search extends State<Search> {
             ),
           ],
         ),
-        SizedBox(width: 90),
-        Icon(
-          Icons.tune,
-          size: 60,
-        ),
       ],
     );
   }
@@ -93,21 +88,47 @@ class _Search extends State<Search> {
       height: 400,
       child: ListView(
         children: [
-          ListTile(
-            leading: Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage("lib/assets/sushi_small.jpg"),
-                ),
-              ),
-            ),
-            title: Text(
-              "Sushi Place",
-              style: TextStyle(fontSize: 20),
-            ),
+          item1(),
+        ],
+      ),
+    );
+  }
+
+  Widget item1() {
+    return ListTile(
+      leading: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage("lib/assets/sushi_small.jpg"),
+          ),
+        ),
+      ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Sushi Place (until 5:30)",
+            style: TextStyle(fontSize: 20),
+          ),
+          Text(
+            "12 Bloor Street, Toronto, ON",
+            style: TextStyle(fontSize: 15),
+          ),
+          Text(
+            "Sushi",
+            style: TextStyle(fontSize: 15),
+          ),
+        ],
+      ),
+      trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "10+\n\$5",
+            style: TextStyle(fontSize: 20),
           ),
         ],
       ),
