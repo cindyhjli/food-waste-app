@@ -55,7 +55,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
   void onPressed() {
     Navigator.of(context).pushAndRemoveUntil(
         PageRouteBuilder(
-            pageBuilder: (context, animation, animation2) => RestaurantHomepage(),
+            pageBuilder: (context, animation, animation2) => RestaurantLogin(),
             transitionDuration: Duration(seconds: 0)),
         (route) => false);
   }
@@ -268,11 +268,11 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
               duration: Duration(milliseconds: 1000),
             ),
           );
-          // Navigator.of(context).pushAndRemoveUntil(
-          //   PageRouteBuilder(
-          //     pageBuilder: (context, animation, animation2) => RestaurantHomepage(),
-          //     transitionDuration: Duration(seconds: 0)),
-          //   (route) => false);
+          Navigator.of(context).pushAndRemoveUntil(
+            PageRouteBuilder(
+              pageBuilder: (context, animation, animation2) => RestaurantHomepage(),
+              transitionDuration: Duration(seconds: 0)),
+            (route) => false);
         }
       },
       child: Text(

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
+import 'package:timezone/timezone.dart' as tz;
+import 'package:timezone/data/latest.dart' as tz;
 
 class RestaurantHomepage extends StatefulWidget {
   @override
@@ -6,6 +10,7 @@ class RestaurantHomepage extends StatefulWidget {
 }
 
 class _RestaurantHomepage extends State<RestaurantHomepage> {
+  DateTime _dateTime = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,82 +19,9 @@ class _RestaurantHomepage extends State<RestaurantHomepage> {
         children: [
           SizedBox(height: 45),
           title(),
-          //mealCounter(),
+          setStartTime(),
         ],
       ),
-    );
-  }
-
-  Widget number() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 30,
-        ),
-        Text(
-          "Number of \nMeals",
-          style: TextStyle(fontSize: 30, color: Colors.blue),
-        ),
-        SizedBox(
-          width: 130,
-        ),
-        Text(
-          "10+",
-          style: TextStyle(fontSize: 40),
-        )
-      ],
-    );
-  }
-
-  Widget price() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 30,
-        ),
-        Text(
-          "Price",
-          style: TextStyle(fontSize: 30, color: Colors.blue),
-        ),
-        SizedBox(
-          width: 230,
-        ),
-        Text(
-          "\$5",
-          style: TextStyle(fontSize: 40),
-        )
-      ],
-    );
-  }
-
-  Widget time() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 30,
-        ),
-        Text(
-          "Time",
-          style: TextStyle(fontSize: 30, color: Colors.blue),
-        ),
-        SizedBox(
-          width: 110,
-        ),
-      ],
-    );
-  }
-
-  Widget time2() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 30,
-        ),
-        Text(
-          "5:00PM-6:00PM",
-          style: TextStyle(fontSize: 30),
-        ),
-      ],
     );
   }
 
@@ -99,21 +31,19 @@ class _RestaurantHomepage extends State<RestaurantHomepage> {
       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     );
   }
-
-  Widget button() {
-    return Container(
-      width: 350,
-      height: 60,
-      child: TextButton(
-        style: TextButton.styleFrom(backgroundColor: Colors.blue),
-        onPressed: onPressed,
-        child: Text(
-          "View Restaurant Page",
-          style: TextStyle(color: Colors.white, fontSize: 30),
-        ),
-      ),
+  Widget setStartTime() {
+    return TimePickerSpinner(
+      is24HourMode: false,
+      normalTextStyle: TextStyle(fontSize: 10, color: Colors.black),
+      highlightedTextStyle: TextStyle(fontSize: 15, color: Colors.blue),
+      spacing: 10.0,
+      itemHeight: 7.0,
+      isForce2Digits: true,
+      onTimeChange: (time) {
+        setState(() {
+          _dateTime = time;
+        });
+      },
     );
   }
-
-  void onPressed() {}
 }
