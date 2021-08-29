@@ -26,6 +26,38 @@ class _Search extends State<Search> {
           list(),
         ],
       ),
+      bottomNavigationBar: Container(
+        color: Colors.grey[300],
+        height: 70,
+        child: Row(
+          children: [
+            Expanded(
+              child: Icon(
+                Icons.home,
+                size: 50,
+              ),
+            ),
+            Expanded(
+              child: Icon(
+                Icons.search,
+                size: 50,
+              ),
+            ),
+            Expanded(
+              child: Icon(
+                Icons.favorite,
+                size: 50,
+              ),
+            ),
+            Expanded(
+              child: Icon(
+                Icons.person,
+                size: 50,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
