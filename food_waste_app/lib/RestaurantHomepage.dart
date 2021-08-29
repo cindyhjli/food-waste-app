@@ -6,147 +6,46 @@ class RestaurantHomepage extends StatefulWidget {
 }
 
 class _RestaurantHomepage extends State<RestaurantHomepage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        SizedBox(height: 50),
-        title(),
-        SizedBox(height: 20),
-        number(),
-        SizedBox(height: 20),
-        price(),
-        SizedBox(height: 20),
-        time(),
-        SizedBox(height: 20),
-        time2(),
-        SizedBox(height: 20),
-        button()
-      ]),
-      bottomNavigationBar: Container(
-        color: Colors.grey[300],
-        height: 70,
-        child: Row(
-          children: [
-            Expanded(
-              child: Icon(
-                Icons.local_dining,
-                size: 50,
-              ),
-            ),
-            Expanded(
-              child: Icon(
-                Icons.food_bank,
-                size: 50,
-              ),
-            ),
-            Expanded(
-              child: Icon(
-                Icons.person,
-                size: 50,
-              ),
-            ),
-          ],
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 45),
+          title(),
+        ],
       ),
-    );
-  }
-
-  Widget number() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 30,
-        ),
-        Text(
-          "Number of \nMeals",
-          style: TextStyle(fontSize: 30, color: Colors.blue),
-        ),
-        SizedBox(
-          width: 130,
-        ),
-        Text(
-          "10+",
-          style: TextStyle(fontSize: 40),
-        )
-      ],
-    );
-  }
-
-  Widget price() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 30,
-        ),
-        Text(
-          "Price",
-          style: TextStyle(fontSize: 30, color: Colors.blue),
-        ),
-        SizedBox(
-          width: 230,
-        ),
-        Text(
-          "\$5",
-          style: TextStyle(fontSize: 40),
-        )
-      ],
-    );
-  }
-
-  Widget time() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 30,
-        ),
-        Text(
-          "Time",
-          style: TextStyle(fontSize: 30, color: Colors.blue),
-        ),
-        SizedBox(
-          width: 110,
-        ),
-      ],
-    );
-  }
-
-  Widget time2() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 30,
-        ),
-        Text(
-          "5:00PM-6:00PM",
-          style: TextStyle(fontSize: 30),
-        ),
-      ],
     );
   }
 
   Widget title() {
     return Text(
       "Your Mystery Meals",
-      style: TextStyle(fontSize: 40),
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     );
   }
+}
 
-  Widget button() {
-    return Container(
-      width: 350,
-      height: 60,
-      child: TextButton(
-        style: TextButton.styleFrom(backgroundColor: Colors.blue),
-        onPressed: onPressed,
-        child: Text(
-          "View Restaurant Page",
-          style: TextStyle(color: Colors.white, fontSize: 30),
-        ),
-      ),
+class mealCounter extends StatefulWidget {
+  @override
+  _mealCounter createState() => _mealCounter();
+}
+
+class _mealCounter extends State<RestaurantHomepage> {
+  int _mealCount = 0;
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text("Number of Meals"),
+      trailing: Row(
+        children: <Widget>[
+          _mealCount != 0? IconButton(icon: Icon(Icons.remove), onPressed: ()=>setState(()=>_mealCount--),): Container(),
+            Text(_mealCount.toString()),
+            IconButton(icon: Icon(Icons.add), onPressed: ()=>setState(()=>_mealCount++))
+        ]
+      )
     );
-  }
-
-  void onPressed() {
   }
 }

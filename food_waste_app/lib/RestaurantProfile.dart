@@ -33,6 +33,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
         margin: EdgeInsets.all(22),
         child: ListView(
           children: [
+            title(),
             name(),
             address(),
             telephone(),
@@ -57,6 +58,18 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
             transitionDuration: Duration(seconds: 0)),
         (route) => false);
   }
+
+  Widget title() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Restaurant Profile",
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        ),
+      ],
+    );
+  } 
 
   Widget name() {
     return Row(
