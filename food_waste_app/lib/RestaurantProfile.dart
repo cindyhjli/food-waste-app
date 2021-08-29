@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
+import 'RestaurantEditMeals.dart';
 
 class RestaurantProfile extends StatefulWidget {
   @override
@@ -54,7 +55,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
   void onPressed() {
     Navigator.of(context).pushAndRemoveUntil(
         PageRouteBuilder(
-            pageBuilder: (context, animation, animation2) => RestaurantLogin(),
+            pageBuilder: (context, animation, animation2) => RestaurantHomepage(),
             transitionDuration: Duration(seconds: 0)),
         (route) => false);
   }

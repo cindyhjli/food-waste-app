@@ -5,7 +5,7 @@ import 'RestaurantProfile.dart';
 import 'LoginPage.dart';
 import 'SearchPage.dart';
 import 'CustomerHomepage.dart';
-import 'RestaurantHomepage.dart';
+import 'RestaurantEditMeals.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
