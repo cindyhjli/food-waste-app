@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_waste_app/MoreDetails.dart';
 import "LaunchPage.dart";
 import 'RestaurantProfile.dart';
 import 'LoginPage.dart';
@@ -18,7 +19,7 @@ class Test extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: RestaurantHomepage(),
+      home: MoreDetails(),
     );
   }
 }
