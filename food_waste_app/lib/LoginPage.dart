@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_waste_app/RestaurantProfile_backup.dart';
+import 'package:food_waste_app/RestaurantProfile.dart';
 
 class CustomerLogin extends StatefulWidget {
   @override
