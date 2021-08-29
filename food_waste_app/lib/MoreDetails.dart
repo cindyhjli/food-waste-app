@@ -40,7 +40,22 @@ class _MoreDetails extends State<MoreDetails> {
 
   void onPressed() {
     setState(() {
-      
+      liked();
     });
+  }
+    
+  Widget liked() {
+    return Positioned(
+      child: IconButton(
+        icon: Icon(
+          Icons.favorite,
+          color: Colors.red,
+          size: 50,
+        ),
+        onPressed: onPressed,
+      ),
+      left: 325,
+      bottom: 455,
+    );
   }
 }

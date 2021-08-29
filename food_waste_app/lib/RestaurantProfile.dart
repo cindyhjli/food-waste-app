@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
-import 'RestaurantEditMeals.dart';
+import 'RestaurantHomepage.dart';
 
 class RestaurantProfile extends StatefulWidget {
   @override
@@ -22,14 +22,6 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Restaurant Profile"),
-        backgroundColor: Colors.blue,
-        leading: IconButton(
-          icon: Icon(Icons.close),
-          onPressed: onPressed,
-        ),
-      ),
       body: Container(
         margin: EdgeInsets.all(22),
         child: ListView(
@@ -59,6 +51,7 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
             transitionDuration: Duration(seconds: 0)),
         (route) => false);
   }
+
 
   Widget title() {
     return Row(
