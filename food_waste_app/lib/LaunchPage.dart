@@ -15,10 +15,11 @@ class _LaunchPage extends State<LaunchPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: 50),
             name(),
-            SizedBox(height: 120),
+            SizedBox(height: 70),
             customer(),
-            SizedBox(height: 10),
+            SizedBox(height: 30),
             restaurant(),
           ],
         ),
@@ -35,12 +36,12 @@ class _LaunchPage extends State<LaunchPage> {
 
   Widget customer() {
     return Container(
-      width: 380,
+      width: 365,
       height: 150,
       color: Colors.blue,
       child: TextButton(
         style: TextButton.styleFrom(backgroundColor: Colors.blue),
-        onPressed: restaurantOption,
+        onPressed: customerOption,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,7 +62,7 @@ class _LaunchPage extends State<LaunchPage> {
 
   Widget restaurant() {
     return Container(
-      width: 380,
+      width: 365,
       height: 150,
       child: TextButton(
         style: TextButton.styleFrom(backgroundColor: Colors.blue),

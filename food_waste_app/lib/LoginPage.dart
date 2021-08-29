@@ -146,7 +146,7 @@ class _CustomerLogin extends State<CustomerLogin> {
   Widget title() {
     return Text(
       "CUSTOMER LOGIN",
-      style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
       textAlign: TextAlign.center,
     );
   }
@@ -304,7 +304,7 @@ class _RestaurantLogin extends State<RestaurantLogin> {
   Widget title() {
     return Text(
       "RESTAURANT LOGIN",
-      style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
       textAlign: TextAlign.center,
     );
   }
