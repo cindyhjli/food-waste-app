@@ -40,6 +40,7 @@ class _Search extends State<Search> {
             Expanded(
               child: Icon(
                 Icons.search,
+                color: Colors.blue,
                 size: 50,
               ),
             ),
@@ -209,7 +210,7 @@ class _Search extends State<Search> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "10+\n\$18",
+            "15+\n\$18",
             style: TextStyle(fontSize: 20),
           ),
         ],
@@ -291,7 +292,7 @@ class _Search extends State<Search> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "5    \n\$9",
+            "5+\n\$9",
             style: TextStyle(fontSize: 20),
           ),
         ],
@@ -332,7 +333,7 @@ class _Search extends State<Search> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "8    \n\$8",
+            "5+\n\$8",
             style: TextStyle(fontSize: 20),
           ),
         ],
@@ -373,7 +374,7 @@ class _Search extends State<Search> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "9    \n\$8",
+            "20+\n\$8",
             style: TextStyle(fontSize: 20),
           ),
         ],
@@ -455,7 +456,7 @@ class _Search extends State<Search> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "10+\n\$6",
+            "25+\n\$6",
             style: TextStyle(fontSize: 20),
           ),
         ],
@@ -496,7 +497,7 @@ class _Search extends State<Search> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "10+\n\$5",
+            "15+\n\$5",
             style: TextStyle(fontSize: 20),
           ),
         ],
