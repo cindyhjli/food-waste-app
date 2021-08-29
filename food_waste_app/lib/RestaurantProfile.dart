@@ -100,6 +100,30 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     );
   }
 
+  Widget logo() {
+    return Row(
+      children: [
+        Text(
+          "Logo",
+          style: TextStyle(fontSize: 20),
+        ),
+        Expanded(child: uploadLogo())
+      ],
+    );
+  }
+
+  Widget photo() {
+    return Row(
+      children: [
+        Text(
+          "Photo",
+          style: TextStyle(fontSize: 20),
+        ),
+        Expanded(child: uploadPhoto())
+      ],
+    );
+  }
+
   Widget enterName() {
     return Form(
       key: _formKey_name,
