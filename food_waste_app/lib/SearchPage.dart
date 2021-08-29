@@ -70,7 +70,7 @@ class _Search extends State<Search> {
           "  Filter",
           style: TextStyle(fontSize: 15, color: Colors.blue),
         ),
-        SizedBox(width: 170),
+        SizedBox(width: 130),
         Text(
           " Sort by: ",
           style: TextStyle(fontSize: 15),
@@ -120,13 +120,349 @@ class _Search extends State<Search> {
       height: 400,
       child: ListView(
         children: [
+          item0(),
           item1(),
+          item2(),
+          item3(),
+          item4(),
+          item5(),
+          item(),
+          item7(),
+          item6(),
+        ],
+      ),
+    );
+  }
+
+  Widget item() {
+    return ListTile(
+      leading: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage("lib/assets/image.png"),
+          ),
+        ),
+      ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Healthy Habits (until 6:45)",
+            style: TextStyle(fontSize: 20),
+          ),
+          Text(
+            "8 Queen's Street, Toronto, ON",
+            style: TextStyle(fontSize: 15),
+          ),
+          Text(
+            "Chinese",
+            style: TextStyle(fontSize: 15),
+          ),
+        ],
+      ),
+      trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "10+\n\$10",
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget item6() {
+    return ListTile(
+      leading: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage("lib/assets/image (1).jpg"),
+          ),
+        ),
+      ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Golden Lobster (until 6:30)",
+            style: TextStyle(fontSize: 20),
+          ),
+          Text(
+            "89 Queen's Street, Toronto, ON",
+            style: TextStyle(fontSize: 15),
+          ),
+          Text(
+            "American",
+            style: TextStyle(fontSize: 15),
+          ),
+        ],
+      ),
+      trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "10+\n\$18",
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget item7() {
+    return ListTile(
+      leading: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage("lib/assets/image (7).jpg"),
+          ),
+        ),
+      ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Taco Hut (until 8:30)",
+            style: TextStyle(fontSize: 20),
+          ),
+          Text(
+            "78 Steeles Avenue, Toronto, ON",
+            style: TextStyle(fontSize: 15),
+          ),
+          Text(
+            "Mexican",
+            style: TextStyle(fontSize: 15),
+          ),
+        ],
+      ),
+      trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "10+\n\$10",
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget item5() {
+    return ListTile(
+      leading: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage("lib/assets/image (5).jpg"),
+          ),
+        ),
+      ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "John's Burgers (until 6:30)",
+            style: TextStyle(fontSize: 20),
+          ),
+          Text(
+            "2 Queen's Street, Toronto, ON",
+            style: TextStyle(fontSize: 15),
+          ),
+          Text(
+            "American",
+            style: TextStyle(fontSize: 15),
+          ),
+        ],
+      ),
+      trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "5    \n\$9",
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget item4() {
+    return ListTile(
+      leading: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage("lib/assets/image (4).jpg"),
+          ),
+        ),
+      ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Hearty Wok (until 5:30)",
+            style: TextStyle(fontSize: 20),
+          ),
+          Text(
+            "9 Eglington Street, Toronto, ON",
+            style: TextStyle(fontSize: 15),
+          ),
+          Text(
+            "Chinese",
+            style: TextStyle(fontSize: 15),
+          ),
+        ],
+      ),
+      trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "8    \n\$8",
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget item3() {
+    return ListTile(
+      leading: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage("lib/assets/image (3).jpg"),
+          ),
+        ),
+      ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Artisan Pizza (until 7:00)",
+            style: TextStyle(fontSize: 20),
+          ),
+          Text(
+            "32 Kingston Road, Toronto, ON",
+            style: TextStyle(fontSize: 15),
+          ),
+          Text(
+            "Italian",
+            style: TextStyle(fontSize: 15),
+          ),
+        ],
+      ),
+      trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "9    \n\$8",
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget item2() {
+    return ListTile(
+      leading: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage("lib/assets/image (2).jpg"),
+          ),
+        ),
+      ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Pasta Co. (until 6:30)",
+            style: TextStyle(fontSize: 20),
+          ),
+          Text(
+            "23 Dundas Street, Toronto, ON",
+            style: TextStyle(fontSize: 15),
+          ),
+          Text(
+            "Italian",
+            style: TextStyle(fontSize: 15),
+          ),
+        ],
+      ),
+      trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "10+\n\$6",
+            style: TextStyle(fontSize: 20),
+          ),
         ],
       ),
     );
   }
 
   Widget item1() {
+    return ListTile(
+      leading: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage("lib/assets/image (1).jpg"),
+          ),
+        ),
+      ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "John's Deli (until 6:30)",
+            style: TextStyle(fontSize: 20),
+          ),
+          Text(
+            "2 Queen's Street, Toronto, ON",
+            style: TextStyle(fontSize: 15),
+          ),
+          Text(
+            "American",
+            style: TextStyle(fontSize: 15),
+          ),
+        ],
+      ),
+      trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "10+\n\$6",
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget item0() {
     return ListTile(
       leading: Container(
         width: 50,
@@ -150,7 +486,7 @@ class _Search extends State<Search> {
             style: TextStyle(fontSize: 15),
           ),
           Text(
-            "Sushi",
+            "Japanese",
             style: TextStyle(fontSize: 15),
           ),
         ],
