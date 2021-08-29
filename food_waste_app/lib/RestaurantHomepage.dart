@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "MoreDetails.dart";
 
 class RestaurantHomepage extends StatefulWidget {
   @override
@@ -31,6 +32,7 @@ class _RestaurantHomepage extends State<RestaurantHomepage> {
             Expanded(
               child: Icon(
                 Icons.local_dining,
+                color: Colors.blue,
                 size: 50,
               ),
             ),
@@ -147,5 +149,11 @@ class _RestaurantHomepage extends State<RestaurantHomepage> {
     );
   }
 
-  void onPressed() {}
+  void onPressed() {
+    Navigator.of(context).pushAndRemoveUntil(
+      PageRouteBuilder(
+          pageBuilder: (context, animation, animation2) => MoreDetails(),
+          transitionDuration: Duration(seconds: 0)),
+      (route) => false);
+  }
 }
