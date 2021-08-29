@@ -26,6 +26,39 @@ class _Search extends State<Search> {
           list(),
         ],
       ),
+      bottomNavigationBar: Container(
+        color: Colors.grey[300],
+        height: 70,
+        child: Row(
+          children: [
+            Expanded(
+              child: Icon(
+                Icons.home,
+                size: 50,
+              ),
+            ),
+            Expanded(
+              child: Icon(
+                Icons.search,
+                size: 50,
+                color: Colors.blue,
+              ),
+            ),
+            Expanded(
+              child: Icon(
+                Icons.favorite,
+                size: 50,
+              ),
+            ),
+            Expanded(
+              child: Icon(
+                Icons.person,
+                size: 50,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -35,12 +68,12 @@ class _Search extends State<Search> {
       children: [
         SizedBox(width: 10),
         Text(
-          "Filter",
+          "  Filter",
           style: TextStyle(fontSize: 15, color: Colors.blue),
         ),
         SizedBox(width: 170),
         Text(
-          "Sort by: ",
+          " Sort by: ",
           style: TextStyle(fontSize: 15),
         ),
         Text(
