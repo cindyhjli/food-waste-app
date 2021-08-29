@@ -5,6 +5,7 @@ import 'RestaurantProfile.dart';
 import 'LoginPage.dart';
 import 'SearchPage.dart';
 import 'CustomerHomepage.dart';
+import 'RestaurantHomepage.dart';
 
 void main() {
   runApp(Test());
@@ -17,7 +18,7 @@ class Test extends StatelessWidget {
       theme: ThemeData(fontFamily: "Montserrat"),
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: CustomerHomepage(),
+      home: RestaurantHomepage(),
     );
   }
 }

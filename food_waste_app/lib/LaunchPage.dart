@@ -36,9 +36,12 @@ class _LaunchPage extends State<LaunchPage> {
 
   Widget customer() {
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        color: Colors.blue,
+      ),
       width: 365,
       height: 150,
-      color: Colors.blue,
       child: TextButton(
         style: TextButton.styleFrom(backgroundColor: Colors.blue),
         onPressed: customerOption,
@@ -62,6 +65,10 @@ class _LaunchPage extends State<LaunchPage> {
 
   Widget restaurant() {
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        color: Colors.blue,
+      ),
       width: 365,
       height: 150,
       child: TextButton(

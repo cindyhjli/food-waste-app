@@ -41,7 +41,6 @@ class _Search extends State<Search> {
               child: Icon(
                 Icons.search,
                 size: 50,
-                color: Colors.blue,
               ),
             ),
             Expanded(
