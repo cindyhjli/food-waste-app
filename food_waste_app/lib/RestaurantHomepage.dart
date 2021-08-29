@@ -15,6 +15,7 @@ class _RestaurantHomepage extends State<RestaurantHomepage> {
         children: [
           SizedBox(height: 45),
           title(),
+          mealCounter(),
         ],
       ),
     );
@@ -22,7 +23,7 @@ class _RestaurantHomepage extends State<RestaurantHomepage> {
 
   Widget title() {
     return Text(
-      "Your Mystery Meals",
+      "  Your Mystery Meals",
       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     );
   }
