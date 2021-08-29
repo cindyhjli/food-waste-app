@@ -16,7 +16,7 @@ class Test extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: CustomerHomepage(),
+      home: LaunchPage(),
     );
   }
 }
