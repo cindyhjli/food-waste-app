@@ -55,7 +55,7 @@ class _LaunchPage extends State<LaunchPage> {
             ),
             Text(
               "CUSTOMER",
-              style: TextStyle(color: Colors.white, fontSize: 60),
+              style: TextStyle(color: Colors.white, fontSize: 55),
             ),
           ],
         ),
