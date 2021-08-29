@@ -35,6 +35,11 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
             address(),
             telephone(),
             website(),
+            logo(),
+            uploadLogo(),
+            photo(),
+            uploadPhoto(),
+            menuDetails(),
             submitButton(),
           ],
         ),
@@ -107,7 +112,17 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
           "Logo",
           style: TextStyle(fontSize: 20),
         ),
-        Expanded(child: uploadLogo())
+      ],
+    );
+  }
+
+  Widget uploadLogo() {
+    return Row(
+      children: [
+        Text(
+          "Upload Logo",
+          style: TextStyle(fontSize: 15),
+        ),
       ],
     );
   }
@@ -119,7 +134,17 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
           "Photo",
           style: TextStyle(fontSize: 20),
         ),
-        Expanded(child: uploadPhoto())
+      ],
+    );
+  }
+
+  Widget uploadPhoto() {
+    return Row(
+      children: [
+        Text(
+          "Upload Photo",
+          style: TextStyle(fontSize: 15),
+        ),
       ],
     );
   }
@@ -204,50 +229,6 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     );
   }
 
-  Widget uploadLogo() {
-    return Text("Upload Logo");
-  }
-
-  Widget uploadPhoto() {
-    return Text("Upload Photo");
-  }
-}
-
-class enterMenuDetails extends StatefulWidget {
-   
-   @override
-   State<enterMenuDetails> createState() => _enterMenuDetailsState();
-}
-
-class _enterMenuDetailsState extends State<enterMenuDetails> {
-  bool isChecked = false;
-
-  @override
-  Widget build(BuildContext context) {
-    Color getColor(Set<MaterialState> states) {
-      const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
-      };
-      if (states.any(interactiveStates.contains)) {
-        return Colors.blue;
-      }
-      return Colors.black;
-    }
-    return Checkbox(
-      checkColor: Colors.white,
-      fillColor: MaterialStateProperty.resolveWith(getColor),
-      value: isChecked,
-      onChanged: (bool? value) {
-        setState(() {
-          isChecked = value!;
-        });
-      },
-    );
-  }
-}
-
 
   Widget submitButton() {
     return ElevatedButton(
@@ -290,3 +271,33 @@ class _enterMenuDetailsState extends State<enterMenuDetails> {
     );
   }
 }
+
+class enterMenuDetails extends StatefulWidget {
+   
+   @override
+   State<enterMenuDetails> createState() => _enterMenuDetailsState();
+}
+
+class _enterMenuDetailsState extends State<enterMenuDetails> {
+  bool isChecked = false;
+
+  @override
+  Widget build(BuildContext context) {
+    Color getColor(Set<MaterialState> states) {
+      return Colors.blue;
+    }
+    return Checkbox(
+      checkColor: Colors.white,
+      fillColor: MaterialStateProperty.resolveWith(getColor),
+      value: isChecked,
+      onChanged: (bool? value) {
+        setState(() {
+          isChecked = value!;
+        });
+      },
+    );
+  }
+}
+
+
+
