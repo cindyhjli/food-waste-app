@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import "MoreDetails(liked).dart";
 
-class MoreDetails extends StatefulWidget {
+class MoreDetails2 extends StatefulWidget {
   @override
-  _MoreDetails createState() => _MoreDetails();
+  _MoreDetails2 createState() => _MoreDetails2();
 }
 
-class _MoreDetails extends State<MoreDetails> {
+class _MoreDetails2 extends State<MoreDetails2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,22 +28,14 @@ class _MoreDetails extends State<MoreDetails> {
     return Positioned(
       child: IconButton(
         icon: Icon(
-          Icons.favorite_border,
-          color: Colors.black,
+          Icons.favorite,
+          color: Colors.red,
           size: 45,
         ),
-        onPressed: onPressed2,
+        onPressed: null,
       ),
       left: 320,
       bottom: 460,
     );
-  }
-
-  void onPressed2() {
-    Navigator.of(context).pushAndRemoveUntil(
-      PageRouteBuilder(
-        pageBuilder: (context, animation, animation2) => MoreDetails2(),
-        transitionDuration: Duration(seconds: 0)),
-      (route) => false);
   }
 }

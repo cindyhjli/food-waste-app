@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
 import 'RestaurantHomepage.dart';
+import 'MoreDetails.dart';
 
 class RestaurantProfile extends StatefulWidget {
   @override
@@ -236,48 +237,43 @@ class _RestaurantProfileState extends State<RestaurantProfile> {
     );
   }
 
-
-  Widget submitButton() {
-    return ElevatedButton(
-      style: ButtonStyle(
-          backgroundColor:
-              MaterialStateProperty.resolveWith((states) => Colors.blue)),
-      onPressed: () {
-        if (_formKey_name.currentState!.validate() &&
-            _formKey_address.currentState!.validate() &&
-            _formKey_telephone.currentState!.validate() &&
-            _formKey_website.currentState!.validate()) {
-          controller_name.clear();
-          controller_address.clear();
-          controller_telephone.clear();
-          controller_website.clear();
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              backgroundColor: Colors.blue,
-              content: Text(
-                "Profile Completed!!",
-                style: TextStyle(fontSize: 30),
-              ),
-              duration: Duration(milliseconds: 1000),
-            ),
-          );
-          Navigator.of(context).pushAndRemoveUntil(
-            PageRouteBuilder(
-              pageBuilder: (context, animation, animation2) => RestaurantHomepage(),
-              transitionDuration: Duration(seconds: 0)),
-            (route) => false);
-        }
-      },
-      child: Text(
-        'Done',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
+  Widget button() {
+    return Container(
+      width: 300,
+      height: 80,
+      child: TextButton(
+        style: TextButton.styleFrom(backgroundColor: Colors.blue),
+        onPressed: onPressed,
+        child: Text(
+          "LOGIN",
+          style: TextStyle(color: Colors.white, fontSize: 40),
         ),
       ),
     );
   }
 
+  Widget submitButton() {
+    return Container(
+      width: 300,
+      height: 60,
+      child: TextButton(
+        style: TextButton.styleFrom(backgroundColor: Colors.blue),
+        onPressed: onPressed1,
+        child: Text(
+          "Done",
+          style: TextStyle(color: Colors.white, fontSize: 20)
+        ),
+      ),
+    );
+  }
+  
+  void onPressed1() {
+    Navigator.of(context).pushAndRemoveUntil(
+      PageRouteBuilder(
+        pageBuilder: (context, animation, animation2) => MoreDetails(),
+        transitionDuration: Duration(seconds: 0)),
+      (route) => false);
+  }
 }
 
 class enterMenuDetails extends StatefulWidget {
