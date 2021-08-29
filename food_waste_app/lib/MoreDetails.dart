@@ -39,11 +39,7 @@ class _MoreDetails extends State<MoreDetails> {
   }
 
   void onPressed() {
-    return Icon(
-      icon: Icons.favorite,
-      size: 50,
-      
-    )
+    setState(() {
       
     });
   }
