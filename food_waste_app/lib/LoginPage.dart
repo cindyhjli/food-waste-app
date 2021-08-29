@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_waste_app/RestaurantProfile_backup.dart';
 
 class CustomerLogin extends StatefulWidget {
   @override
@@ -285,6 +286,11 @@ class _RestaurantLogin extends State<RestaurantLogin> {
         duration: Duration(milliseconds: 1000),
       ),
     );
+        Navigator.of(context).pushAndRemoveUntil(
+        PageRouteBuilder(
+            pageBuilder: (context, animation, animation2) => RestaurantProfile(),
+            transitionDuration: Duration(seconds: 0)),
+        (route) => false);
   }
 
   Widget newAccount() {
