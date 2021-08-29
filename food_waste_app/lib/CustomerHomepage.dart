@@ -150,7 +150,7 @@ class _CustomerHomepage extends State<CustomerHomepage> {
 
   Widget title() {
     return Text(
-      " Cheap Eats ",
+      " CHEAP EATS ",
       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     );
   }
