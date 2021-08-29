@@ -14,7 +14,7 @@ class _RestaurantHomepage extends State<RestaurantHomepage> {
         children: [
           SizedBox(height: 45),
           title(),
-          mealCounter(),
+          //mealCounter(),
         ],
       ),
     );
