@@ -49,6 +49,7 @@ class _MoreDetails extends State<MoreDetails> {
       child: IconButton(
         icon: Icon(
           Icons.favorite,
+          color: Colors.red,
           size: 50,
         ),
         onPressed: onPressed,
