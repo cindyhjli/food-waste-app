@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
-import 'RestaurantHomepage.dart';
+import 'RestaurantEditMeals.dart';
 
 class RestaurantProfile extends StatefulWidget {
   @override
