@@ -20,7 +20,7 @@ class Test extends StatelessWidget {
       theme: ThemeData(fontFamily: GoogleFonts.montserrat().fontFamily),
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: LaunchPage(),
+      home: CustomerHomepage(),
     );
   }
 }
