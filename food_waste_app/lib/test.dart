@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import "LaunchPage.dart";
 import 'RestaurantProfile.dart';
 import 'LoginPage.dart';
+import 'SearchPage.dart';
 
 void main() {
   runApp(Test());
@@ -14,7 +15,7 @@ class Test extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: LaunchPage(),
+      home: Search(),
     );
   }
 }
